@@ -11,6 +11,7 @@ import {
 
 import Card from "../components/Card";
 import Input from "../components/Input";
+import NumberContainer from "../components/NumberContainer";
 import Colors from "../constants/colors";
 
 const StartGameScreen = props => {
@@ -43,7 +44,14 @@ const StartGameScreen = props => {
   let confirmedOutput;
 
   if (confirmed) {
-    confirmedOutput = <Text>Chosen number is {selectedNumber}</Text>;
+    confirmedOutput = (
+      <View>
+        <Card>
+          <Text>Your number is</Text>
+          <NumberContainer>{selectedNumber}</NumberContainer>
+        </Card>
+      </View>
+    );
   }
 
   return (
